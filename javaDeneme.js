@@ -1,5 +1,6 @@
 
 document.querySelector("#btnSearchl").addEventListener("click", function(){
+    debugger
     console.log('Butona bastım');
     var input=document.querySelector('#search').value;
     FetchIslemleri(input)
@@ -10,6 +11,12 @@ function FetchIslemleri(country) {
     fetch('https://restcountries.com/v3.1/name/' + country)
     .then((response) => response.json())
     .then((data) => {
+        if(data?.status){ // todo: hata yakalama
+
+
+            //todo: if else ,ü switch case
+            // for, foreach, index değeri
+        }
         oneDeger(data[0]);
         const neighbors = data[0].borders.toString();
         Komsular(neighbors);
@@ -17,7 +24,7 @@ function FetchIslemleri(country) {
 }
 
 function oneDeger(data) {
-    var deger = document.querySelector('article');
+    var deger = document.querySelector('#article');
     var resim = `
     <div class="col-3" id="resim">
     <h4 id="ortala">Ülke</h4>
