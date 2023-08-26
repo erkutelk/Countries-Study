@@ -24,7 +24,9 @@ function FetchIslemleri(country) {
 }
 
 function oneDeger(data) {
+
     var deger = document.querySelector('#article');
+    deger.innerHTML='';
     var resim = `
     <div class="col-3" id="resim">
     <h4 id="ortala">Ülke</h4>
